@@ -6,18 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var AddBugComponent = (function () {
+    function AddBugComponent() {
     }
-    AppComponent.prototype.navigateToAddBug = function () {
-    };
-    return AppComponent;
+    return AddBugComponent;
 }());
-AppComponent = __decorate([
+AddBugComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: './app.component.html',
+        selector: 'add-bug',
+        template: 'Hello my name is Naaame.'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], AddBugComponent);
+exports.AddBugComponent = AddBugComponent;
+//# sourceMappingURL=add-bug.component.js.map
