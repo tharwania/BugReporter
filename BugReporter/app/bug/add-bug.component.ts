@@ -2,8 +2,10 @@
 
 @Component({
     selector: 'add-bug',
-    template: 'Hello my name is Naaame.'
+    templateUrl: './add-bug.component.html'
 })
 export class AddBugComponent {
-   
+    onSubmit(formValue: any) {
+        console.log(formValue);
+    }
 }

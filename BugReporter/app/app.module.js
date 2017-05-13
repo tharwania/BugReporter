@@ -7,9 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var add_bug_component_1 = require("./bug/add-bug.component");
+var bug_list_component_1 = require("./bug/bug-list.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,12 +21,13 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
             router_1.RouterModule.forRoot([
-                { path: 'ind', component: app_component_1.AppComponent },
-                { path: 'add', component: add_bug_component_1.AddBugComponent }
+                { path: 'add', component: add_bug_component_1.AddBugComponent },
+                { path: 'buglist', component: bug_list_component_1.BugListComponent },
             ])
         ],
-        declarations: [app_component_1.AppComponent, add_bug_component_1.AddBugComponent],
+        declarations: [app_component_1.AppComponent, add_bug_component_1.AddBugComponent, bug_list_component_1.BugListComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

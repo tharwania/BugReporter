@@ -6,19 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AddBugComponent = (function () {
-    function AddBugComponent() {
+var BugListComponent = (function () {
+    function BugListComponent() {
     }
-    AddBugComponent.prototype.onSubmit = function (formValue) {
-        console.log(formValue);
-    };
-    return AddBugComponent;
+    return BugListComponent;
 }());
-AddBugComponent = __decorate([
+BugListComponent = __decorate([
     core_1.Component({
-        selector: 'add-bug',
-        templateUrl: './add-bug.component.html'
+        selector: 'bug-list',
+        templateUrl: './bug-list.component.html'
     })
-], AddBugComponent);
-exports.AddBugComponent = AddBugComponent;
-//# sourceMappingURL=add-bug.component.js.map
+], BugListComponent);
+exports.BugListComponent = BugListComponent;
+//# sourceMappingURL=bug-list.component.js.map
