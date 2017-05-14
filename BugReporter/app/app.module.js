@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var add_bug_component_1 = require("./bug/add-bug.component");
 var bug_list_component_1 = require("./bug/bug-list.component");
@@ -22,6 +23,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
+            http_1.HttpModule,
             router_1.RouterModule.forRoot([
                 { path: 'add', component: add_bug_component_1.AddBugComponent },
                 { path: 'buglist', component: bug_list_component_1.BugListComponent },

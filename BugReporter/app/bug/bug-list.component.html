@@ -6,17 +6,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>One Bug</td>
-            <td> One Biiiiig Bug</td>
-        </tr>
-        <tr>
-            <td>One Bug</td>
-            <td> One Biiiiig Bug</td>
-        </tr>
-        <tr>
-            <td>One Bug</td>
-            <td> One Biiiiig Bug</td>
+        <tr *ngFor="let bug of bugList">
+            <td>{{ bug.Title }}</td>
+            <td>{{ bug.Description }}</td>
         </tr>
     </tbody>
 </table>
