@@ -12,14 +12,14 @@ export class AddBugComponent {
     constructor(private _bugService: BugService) { }
 
     onSubmit(formValue: any) {
-        debugger;
         let bugModel: BugModel = new BugModel();
         bugModel.Title = formValue.title;
         bugModel.Description = formValue.description;
-
-        console.log(formValue);
+        var result = this._bugService.createBug(bugModel)
+            .subscribe(
+                    result => console.log(result),
+                    error => console.log(error)
+            );
         
-        var result = this._bugService.createBug(bugModel);
-        console.log(result);
     }
 }

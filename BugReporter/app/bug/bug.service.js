@@ -17,7 +17,7 @@ require("rxjs/add/operator/catch");
 var BugService = (function () {
     function BugService(_http) {
         this._http = _http;
-        this.url = "/api/bug";
+        this.url = "/api/bug/";
     }
     BugService.prototype.getBugList = function () {
         return this._http.get(this.url)
@@ -25,9 +25,9 @@ var BugService = (function () {
     };
     BugService.prototype.createBug = function (bug) {
         var bodyString = JSON.stringify(bug); // Stringify payload
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json; charset=utf-8' }); // ... Set content type to JSON
         var options = new http_1.RequestOptions({ headers: headers }); // Create a request option
-        return this._http.post(this.url, bug, options) // ...using post request
+        return this._http.post(this.url, bodyString, options) // ...using post request
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); }); //...errors if any
     };

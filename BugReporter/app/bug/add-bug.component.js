@@ -19,8 +19,8 @@ var AddBugComponent = (function () {
         var bugModel = new bug_type_1.BugModel();
         bugModel.Title = formValue.title;
         bugModel.Description = formValue.description;
-        console.log(formValue);
-        this._bugService.createBug(bugModel);
+        var result = this._bugService.createBug(bugModel)
+            .subscribe(function (result) { return console.log(result); }, function (error) { return console.log(error); });
     };
     return AddBugComponent;
 }());
