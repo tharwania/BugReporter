@@ -16,6 +16,7 @@ import { BugListComponent } from './bug/bug-list.component';
         RouterModule.forRoot([
             { path: 'add', component: AddBugComponent },
             { path: 'buglist', component: BugListComponent },
+            { path: 'edit/:id', component: AddBugComponent }
         ])
     ],
     declarations: [AppComponent, AddBugComponent, BugListComponent ],

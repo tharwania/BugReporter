@@ -1,4 +1,5 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { BugService } from './bug.service';
 import { BugModel } from './bug.type';
@@ -8,18 +9,25 @@ import { BugModel } from './bug.type';
     templateUrl: './add-bug.component.html',
     providers: [ BugService ]
 })
-export class AddBugComponent {
-    constructor(private _bugService: BugService) { }
+export class AddBugComponent implements OnInit {
+    bug = new BugModel(0, "", "");
+    constructor(private _bugService: BugService, private _route: ActivatedRoute) { }
+
+    ngOnInit() {
+
+        let id = this._route.snapshot.params['id'];
+        if (id != undefined) {
+            this._bugService.getBugById(id)
+                .subscribe(bugData => this.bug = bugData);
+        }
+    }
 
     onSubmit(formValue: any) {
-        let bugModel: BugModel = new BugModel();
-        bugModel.Title = formValue.title;
-        bugModel.Description = formValue.description;
-        var result = this._bugService.createBug(bugModel)
+
+        var result = this._bugService.createBug(this.bug)
             .subscribe(
                     result => console.log(result),
                     error => console.log(error)
             );
-        
     }
 }

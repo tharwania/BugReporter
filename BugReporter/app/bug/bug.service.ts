@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers, RequestOptions, URLSearchParams} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 // Import RxJs required methods
@@ -12,6 +12,16 @@ import { BugModel } from './bug.type';
 export class BugService {
     constructor(private _http: Http) { }
     private url: string = "/api/bug/";
+
+    getBugById(id: number) {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('id', id.toString());
+
+        //Http request-
+        return this._http.get(this.url, {
+            search: params
+        }).map((response: Response) => response.json() as BugModel);
+    }
 
     getBugList() {
         return this._http.get(this.url)

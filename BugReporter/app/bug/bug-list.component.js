@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var bug_service_1 = require("./bug.service");
 var BugListComponent = (function () {
-    function BugListComponent(_bugService) {
+    function BugListComponent(_bugService, _router) {
         this._bugService = _bugService;
+        this._router = _router;
         this.bugList = [];
     }
     BugListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._bugService.getBugList()
             .subscribe(function (bugData) { return _this.bugList = bugData; });
+    };
+    BugListComponent.prototype.onSelect = function (bug) {
+        this._router.navigate(['/edit', bug.Id]);
     };
     return BugListComponent;
 }());
@@ -28,7 +33,7 @@ BugListComponent = __decorate([
         templateUrl: './bug-list.component.html',
         providers: [bug_service_1.BugService]
     }),
-    __metadata("design:paramtypes", [bug_service_1.BugService])
+    __metadata("design:paramtypes", [bug_service_1.BugService, router_1.Router])
 ], BugListComponent);
 exports.BugListComponent = BugListComponent;
 //# sourceMappingURL=bug-list.component.js.map

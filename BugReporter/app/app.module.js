@@ -27,6 +27,7 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: 'add', component: add_bug_component_1.AddBugComponent },
                 { path: 'buglist', component: bug_list_component_1.BugListComponent },
+                { path: 'edit/:id', component: add_bug_component_1.AddBugComponent }
             ])
         ],
         declarations: [app_component_1.AppComponent, add_bug_component_1.AddBugComponent, bug_list_component_1.BugListComponent],

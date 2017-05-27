@@ -19,6 +19,14 @@ var BugService = (function () {
         this._http = _http;
         this.url = "/api/bug/";
     }
+    BugService.prototype.getBugById = function (id) {
+        var params = new http_1.URLSearchParams();
+        params.set('id', id.toString());
+        //Http request-
+        return this._http.get(this.url, {
+            search: params
+        }).map(function (response) { return response.json(); });
+    };
     BugService.prototype.getBugList = function () {
         return this._http.get(this.url)
             .map(function (response) { return response.json(); });

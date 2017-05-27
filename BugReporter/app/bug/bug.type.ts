@@ -1,5 +1,8 @@
 ﻿
 export class BugModel {
-    public Title: string;
-    public Description: string;
+    constructor(
+        public Id: number,
+        public Title: string,
+        public Description: string
+    ) {}
 }

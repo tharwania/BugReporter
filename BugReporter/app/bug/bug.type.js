@@ -1,6 +1,9 @@
 "use strict";
 var BugModel = (function () {
-    function BugModel() {
+    function BugModel(Id, Title, Description) {
+        this.Id = Id;
+        this.Title = Title;
+        this.Description = Description;
     }
     return BugModel;
 }());

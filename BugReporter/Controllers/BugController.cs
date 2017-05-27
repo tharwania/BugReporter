@@ -25,9 +25,9 @@ namespace BugReporter.Controllers
         }
 
         // GET: api/Bug/5
-        public string Get(int id)
+        public BugModel Get(int id)
         {
-            return "value";
+            return new BugModel("Edit Wala Bug", "Edit Wala Bug");
         }
 
         // POST: api/Bug
