@@ -20,6 +20,6 @@ import { BugListComponent } from './bug/bug-list.component';
         ])
     ],
     declarations: [AppComponent, AddBugComponent, BugListComponent ],
-    bootstrap:    [ AppComponent ]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
